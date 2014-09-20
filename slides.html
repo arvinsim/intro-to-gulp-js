@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Introduction to gulp.js</title>
+        <link rel="stylesheet" href="./bower_components/reveal.js/css/reveal.min.css">
+        <link rel="stylesheet" href="./bower_components/reveal.js/css/theme/night.css">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1>gulp.js</h1>
+                    <p>The streaming build system</p>        
+                </section>
+            </div>
+            <div class="slides">
+                <section>
+                    <h1>The obligatory introduction speech(blah blah blah)</h1>
+                </section>
+                <section>
+                    <ul>
+                        <li>Name: Arthur Vincent Simon</li>
+                        <li>Age: Irrelevant</li>
+                        <li>Occupation: Web Developer</li>
+                        <li>Likes: Memes</li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>Ain't nobody got time for that</h1>
+                </section>
+            </div>
+            <div class="slides">
+                <section>
+                    <h1>Summary</h1>
+                    <ul>
+                        <li class="fragment roll-in">
+                            Build Systems
+                            <ul>
+                                <li class="fragment roll-in">What are they?</li>
+                                <li class="fragment roll-in">Why are they relevant in the programming world?</li>
+                                <li class="fragment roll-in">In what way can they be useful for me?</li>
+                            </ul>
+                        </li>
+                        <li class="fragment roll-in">
+                            A VERY brief introduction to NodeJS
+                        </li>
+                        <li class="fragment roll-in">
+                            Introduction to gulp.js
+                            <ul>
+                                <li class="fragment roll-in">What is gulp.js?</li>
+                                <li class="fragment roll-in">Why use gulp.js?</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>And if you are convinced...</h3>
+                </section>
+                <section>
+                    <h1>Summary continued</h1>
+                    <ul>
+                        <li class="fragment roll-in">
+                            gulp.js Basics
+                            <ul>
+                                <li class="fragment roll-in">Installation</li>
+                                <li class="fragment roll-in">A simple example</li>
+                                <li class="fragment roll-in">The 5 API functions that you need for gulp.js</li>
+                            </ul>
+                        </li>
+                        <li class="fragment roll-in">
+                            More gulp.js
+                            <ul>
+                                <li class="fragment roll-in">Commandline Parameters</li>
+                                <li class="fragment roll-in">Very common plugins</li>
+                            </ul>
+                        </li>
+                        <li class="fragment roll-in">
+                            Advanced Examples
+                            <ul>
+                                <li class="fragment roll-in">Browserify</li>
+                                <li class="fragment roll-in">LESS</li>
+                                <li class="fragment roll-in">JSHINT and JSDOC</li>
+                                <li class="fragment roll-in">BrowserSync</li>
+                                <li class="fragment roll-in">Image Optimization</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>What I won't cover</h1>
+                    <ul>
+                        <li class="fragment roll-in">The nitty gritty of node.js streams</li>
+                        <li class="fragment roll-in">Multiple build setups like separate builds for
+                        development and production</li>
+                        <li class="fragment roll-in">Building gulp plugins</li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>Savvy? Let's get it on!</h1>
+                </section>
+            </div>              
+            <div class="slides">
+                <section>
+                    <h1>So what are Build Systems?</h1>
+                </section>
+                <section>
+                    <p>Straight from Wikipedia</p>
+                    <blockquote>
+                        <p>Build automation is the act of scripting or automating a wide variety of tasks that software developers do in their day-to-day activities including things like:</p>
+
+                        <ul>
+                            <li class="fragment roll-in">compiling computer source code into binary code</li>
+                            <li class="fragment roll-in">packaging binary code</li>
+                            <li class="fragment roll-in">running automated tests</li>
+                            <li class="fragment roll-in">deploying to production systems</li>
+                            <li class="fragment roll-in">creating documentation and/or release notes</li>
+                        </ul>
+                    </blockquote>
+                </section>
+                <section>
+                    
+                </section>
+                <section>
+                    <h1>Why are they relevant? How can they help me?</h1>
+                </section>
+                <section>
+                    <ul>
+                        <li class="fragment roll-in">Improve product quality</li>
+                        <li class="fragment roll-in">Accelerate the compile and link processing</li>
+                        <li class="fragment roll-in">Eliminate redundant tasks</li>
+                        <li class="fragment roll-in">Minimize "bad builds"</li>
+                        <li class="fragment roll-in">Eliminate dependencies on key personnel</li>
+                        <li class="fragment roll-in">Have history of builds and releases in order to investigate issues</li>
+                        <li class="fragment roll-in">Save time and money - because of the reasons listed above.</li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
+                    <h6>Let us sidetrack a bit...</h6>
+                    <h2>NodeJS and NPM</h2>
+                </section>
+                <section>
+                    <dl>
+                        <dt>Node.js</dt>
+                        <dd>Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications</d>
+                    </dl>
+
+                    <dl>
+                        <dt>NPM</dt>
+                        <dd>Stands for Node Packaged Modules(NPM). It is the official package manager for Node.js</d>
+                    </dl>
+                </section>
+                <section>
+                    <p>So why do we need to know about this?</p>
+                </section>
+                <section>
+                    <p>To put it simply, gulp.js is built on top of Node.js</p>
+                </section>
+                <section>
+                    <h3>What does this mean?</h3>
+                    <ul>
+                        <li class="fragment roll-in">gulp.js uses Javascript</li>
+                        <li class="fragment roll-in">gulp.js can use Node.js native modules</li>
+                        <li class="fragment roll-in">gulp.js specific packages is retrieved via NPM</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>And now back to our programming...</p>
+                </section>
+            </div>
+
+            <div class="slides">
+                <section>
+                    <p>I have deferred this long enough</p>
+                </section>
+                <section>
+                    <h3>What is gulp.js?</h3>
+                    <ul>
+                        <li class="fragment roll-in">Task / Build runner</li>
+                        <li class="fragment roll-in">Uses native Javascript Syntax</li>
+                        <li class="fragment roll-in">Uses Pipes or Streaming Build</li>
+                    </ul>
+                </section>
+                <section></section>
+            </div>
+
+            <div class="slides">
+                <!-- TODO: gulp.js installation -->
+                <section>
+                    <h3>Step 1: Install node.js and npm</h3>
+                    <ul>
+                        <li class="fragment roll-in">
+                            <p>Check if node.js is installed by running this code</p>
+                            <code>node -v</code>
+                            <p>(The -v flag is to show the version of node.js)</p>
+                        </li>
+                        <li class="fragment roll-in">
+                            <ul>
+                                <li>
+                                    <p>If the code above outputs something like..</p>
+                                    <code>v0.10.26</code>
+                                    <p>...then node.js is already installed</p>
+                                </li>
+                                <li>
+                                    <p>If the code above outputs something different, then try installing using this command</p>
+                                    <code>sudo apt-get install nodejs</code>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Step 2: Install gulp.js</h3>
+                    <ul>
+                        <li class="fragment roll-in">
+                            <p>Run this command</p>
+                            <code>npm install gulp -g</code>
+                            <p>Note: the -g flag is to ensure gulp is available globally to all projects</p>
+                        </li>
+                        <li class="fragment roll-in">
+                            <p>If you are using Mac or Linux OS, you might need to prepend sudo</p>
+                            <code>sudo npm install gulp -g</code>
+                        </li>
+                        <li class="fragment roll-in">
+                            <p>Check if gulp was installed properly by checking the version via the -v flag</p>
+                            <code>gulp -v</code>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Step 3: Setup your project</h3>
+                    <ul>
+                        <li class="fragment roll-in">
+                            Check out barebones git project in 
+                        </li>
+                        <li class="fragment roll-in">
+                            <p>Install Gulp locally</p>
+                            <code>npm install gulp --save-dev</code>
+                            <p>Note: This will create a node_modules folder within your current directory. This contains the code for gulp and gulp plugins</p>
+                        </li>
+                        <li class="fragment roll-in">
+                            <p>Create an empty gulpfile.js file in your current folder</p>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="slides">
+                <!-- TODO: Barebones example showcasing the gulp.js api commands and how to run it
+                in the commandline -->
+                <!-- TODO: 4 gulp.js api commands -->
+                <section>
+                    <p class="fragment roll-in">Not that's done, let us get into a very simple, barebones, do-nothing example</p>
+                    <code class="fragment roll-in">
+                        var gulp = require('gulp');
+
+                        gulp.task('default', function() {
+                          // place code for your default task here
+                        });
+                    </code>
+                    <p>In your terminal run this</p>
+                    <code>gulp</code>
+                </section>
+                <section>Let's try something a little bit more useful</section>
+                <section>
+                    <code>
+                        var gulp = require('gulp),
+                            minifyHtml = require('gulp-minify-html'),
+                             rename = require('gulp-rename');
+                         
+                        gulp.task('minify-html', function () {
+                            gulp.src('./index.html')
+                                .pipe(minifyHtml())
+                                .pipe(rename('index.min.html'))
+                                .pipe(gulp.dest('./'));
+                        });
+                    </code>
+                    <p>In your terminal run this</p>
+                    <code>gulp minify-html</code>
+                </section>
+                <section>
+                    <p>4 api commands that we are using for gulp.js</p>
+                    <ul>
+                        <li class="fragment roll-in">gulp.task</li>
+                        <li class="fragment roll-in">gulp.src</li>
+                        <li class="fragment roll-in">gulp.dest</li>
+                        <li class="fragment roll-in">gulp.watch</li>
+                    </ul>
+                </section>
+            </div>          
+
+            <div class="slides">
+                <!-- Basic examples -->
+                <!-- TODO: CSS Minification -->
+                <!-- TODO: Javascript Minification -->
+                <!-- TODO: Image Optimization -->
+            </div>
+
+            <div class="slides">
+                <!-- More examples -->
+                <!-- TODO: JSHint -->
+                <!-- TODO: Combination of the basic examples -->
+                <!-- TODO: LESS compilation -->
+                <!-- TODO: using watch -->
+                <!-- TODO: Handling errors -->
+            </div>
+
+            <div class="slides">
+                <!-- Advanced examples -->
+                <!-- TODO: Browserify -->
+                <!-- TODO: Browsersync -->
+            </div>
+        <script src="./bower_components/reveal.js/js/reveal.min.js"></script>
+        <script src="./bower_components/reveal.js/plugin/highlight/highlight.js"></script>
+        <script type="text/javascript">
+            Reveal.initialize({ 
+                autoSlide: 0
+                // ,
+                // dependencies: [
+                //     // Syntax highlight for <code> elements
+                //     { 
+                //         src: './bower_components/reveal.js/plugin/highlight/highlight.js',
+                //         async: true,
+                //         callback: function() {
+                //             hljs.initHighlightingOnLoad();
+                //         }
+                //     }
+                // ]
+            });
+        </script>
+    </body>
+</html>
