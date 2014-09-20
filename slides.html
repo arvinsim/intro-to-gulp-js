@@ -8,86 +8,69 @@
     <body>
         <div class="reveal">
             <div class="slides">
-                <section>
-                    <h1>gulp.js</h1>
+                <section data-background="#400000">
+                    <img src="./assets/images/gulp.png" alt="Gulp" style="border: none; background: none; box-shadow: none;">
+                    <h1>Introduction to build systems with gulp.js</h1>
                     <p>The streaming build system</p>        
                 </section>
-            </div>
-            <div class="slides">
                 <section>
-                    <h1>The obligatory introduction speech(blah blah blah)</h1>
-                </section>
-                <section>
+                    <h2>The obligatory introduction speech</h2>
                     <ul>
-                        <li>Name: Arthur Vincent Simon</li>
-                        <li>Age: Irrelevant</li>
-                        <li>Occupation: Web Developer</li>
-                        <li>Likes: Memes</li>
+                        <li class="fragment roll-in">Name: Arthur Vincent Simon</li>
+                        <li class="fragment roll-in">Age: Irrelevant!</li>
+                        <li class="fragment roll-in">Occupation: Web Developer at Innovuze Inc.</li>
+                        <li class="fragment roll-in">Years in the field: 6</li>
                     </ul>
                 </section>
                 <section>
-                    <h1>Ain't nobody got time for that</h1>
+                    <img src="./assets/images/aint_nobody_got_time_for_that.jpg" alt="Ain't nobody got time for that">
                 </section>
-            </div>
-            <div class="slides">
-                <section>
-                    <h1>Summary</h1>
+                <section data-background="#1A4241">
+                    <h2>Summary</h2>
                     <ul>
                         <li class="fragment roll-in">
-                            Build Systems
+                            <em>Build Systems</em>
                             <ul>
-                                <li class="fragment roll-in">What are they?</li>
-                                <li class="fragment roll-in">Why are they relevant in the programming world?</li>
-                                <li class="fragment roll-in">In what way can they be useful for me?</li>
+                                <li>What are they?</li>
+                                <li>Why are they relevant in the programming world?</li>
+                                <li>In what way can they be useful for me?</li>
                             </ul>
                         </li>
                         <li class="fragment roll-in">
-                            A VERY brief introduction to NodeJS
+                            <em>A VERY brief description of node.js and npm</em>
                         </li>
                         <li class="fragment roll-in">
-                            Introduction to gulp.js
+                            <em>Introduction to gulp.js</em>
                             <ul>
-                                <li class="fragment roll-in">What is gulp.js?</li>
-                                <li class="fragment roll-in">Why use gulp.js?</li>
+                                <li>What is gulp.js?</li>
+                                <li>Why use gulp.js?</li>
                             </ul>
                         </li>
                     </ul>
                 </section>
-                <section>
-                    <h3>And if you are convinced...</h3>
+                <section data-background="#1A4241">
+                    <img src="./assets/images/still_interested.jpg" alt="Still Interested">
                 </section>
-                <section>
-                    <h1>Summary continued</h1>
+                <section data-background="#1A4241">
+                    <h2>Summary continued</h2>
                     <ul>
                         <li class="fragment roll-in">
-                            gulp.js Basics
+                            <em>gulp.js basics</em>
                             <ul>
-                                <li class="fragment roll-in">Installation</li>
-                                <li class="fragment roll-in">A simple example</li>
-                                <li class="fragment roll-in">The 5 API functions that you need for gulp.js</li>
+                                <li>Installation</li>
+                                <li>4 core gulp.js functions and a basic example</li>
                             </ul>
                         </li>
                         <li class="fragment roll-in">
-                            More gulp.js
-                            <ul>
-                                <li class="fragment roll-in">Commandline Parameters</li>
-                                <li class="fragment roll-in">Very common plugins</li>
-                            </ul>
+                            <em>Basic exercises such as CSS and JS minification and image optimizations</em>
                         </li>
                         <li class="fragment roll-in">
-                            Advanced Examples
-                            <ul>
-                                <li class="fragment roll-in">Browserify</li>
-                                <li class="fragment roll-in">LESS</li>
-                                <li class="fragment roll-in">JSHINT and JSDOC</li>
-                                <li class="fragment roll-in">BrowserSync</li>
-                                <li class="fragment roll-in">Image Optimization</li>
-                            </ul>
+                            <em>Advanced exercises such as linting, bundling modules and synchronized browser testing</em>
                         </li>
                     </ul>
                 </section>
-                <section>
-                    <h1>What I won't cover</h1>
+                <section data-background="#1A4241">
+                    <h2>What I won't cover</h2>
                     <ul>
                         <li class="fragment roll-in">The nitty gritty of node.js streams</li>
                         <li class="fragment roll-in">Multiple build setups like separate builds for
@@ -95,19 +78,20 @@
                         <li class="fragment roll-in">Building gulp plugins</li>
                     </ul>
                 </section>
-                <section>
-                    <h1>Savvy? Let's get it on!</h1>
+                <section data-background="#1A4241">
+                    <img src="./assets/images/savvy.jpg" alt="savvy?">
                 </section>
             </div>              
+
+            <!-- Build Systems -->
             <div class="slides">
                 <section>
-                    <h1>So what are Build Systems?</h1>
+                    <h2>So what are build systems/build automation?</h2>
                 </section>
                 <section>
-                    <p>Straight from Wikipedia</p>
-                    <blockquote>
+                    <h2>Definition</h2>
+                    <blockquote class="fragment roll-in">
                         <p>Build automation is the act of scripting or automating a wide variety of tasks that software developers do in their day-to-day activities including things like:</p>
-
                         <ul>
                             <li class="fragment roll-in">compiling computer source code into binary code</li>
                             <li class="fragment roll-in">packaging binary code</li>
@@ -118,17 +102,32 @@
                     </blockquote>
                 </section>
                 <section>
-                    
+                    <h2>What this means for a web developer</h2>
+                    <ul>
+                        <li class="fragment roll-in">Running tests</li>
+                        <li class="fragment roll-in">Linting and minification of JS files</li>
+                        <li class="fragment roll-in">Compiling LESS, SASS and/or Coffeescript Files</li>
+                        <li class="fragment roll-in">Asset Optimization</li>
+                        <li class="fragment roll-in">Deployment to Production Servers</li>
+                    </ul>
                 </section>
                 <section>
-                    <h1>Why are they relevant? How can they help me?</h1>
+                    <h2>A few examples</h2>
+                    <ul>
+                        <li class="fragment roll-in">GNU make</li>
+                        <li class="fragment roll-in">Rake(Ruby)</li>
+                        <li class="fragment roll-in">Maven(Java)</li>
+                        <li class="fragment roll-in">Ant(Java)</li>
+                        <li class="fragment roll-in">Scons(Python)</li>
+                        <li class="fragment roll-in">A-A-P(Python)</li>
+                        <li class="fragment roll-in">Grunt(Javascript)</li>
+                    </ul>
                 </section>
                 <section>
+                    <h2>Why are they relevant? How can they help me?</h2>
                     <ul>
                         <li class="fragment roll-in">Improve product quality</li>
-                        <li class="fragment roll-in">Accelerate the compile and link processing</li>
                         <li class="fragment roll-in">Eliminate redundant tasks</li>
-                        <li class="fragment roll-in">Minimize "bad builds"</li>
                         <li class="fragment roll-in">Eliminate dependencies on key personnel</li>
                         <li class="fragment roll-in">Have history of builds and releases in order to investigate issues</li>
                         <li class="fragment roll-in">Save time and money - because of the reasons listed above.</li>
@@ -136,60 +135,67 @@
                 </section>
             </div>
 
+            <!-- Node.js and NPM -->
             <div class="slides">
                 <section>
-                    <h6>Let us sidetrack a bit...</h6>
-                    <h2>NodeJS and NPM</h2>
+                    <img src="./assets/images/detour.jpg" alt="Let us sidetrack a bit">
                 </section>
                 <section>
-                    <dl>
-                        <dt>Node.js</dt>
-                        <dd>Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications</d>
-                    </dl>
-
-                    <dl>
-                        <dt>NPM</dt>
-                        <dd>Stands for Node Packaged Modules(NPM). It is the official package manager for Node.js</d>
-                    </dl>
+                    <img src="./assets/images/Node.js.png" alt="Node.js" style="border: none; background: none; box-shadow: none;">
                 </section>
                 <section>
-                    <p>So why do we need to know about this?</p>
-                </section>
-                <section>
-                    <p>To put it simply, gulp.js is built on top of Node.js</p>
-                </section>
-                <section>
-                    <h3>What does this mean?</h3>
+                    <h2>Definitions</h2>
                     <ul>
-                        <li class="fragment roll-in">gulp.js uses Javascript</li>
+                        <li><stron>Node.js</strong> - Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications</li>
+                        <li><strong>NPM</strong> - Stands for Node Packaged Modules(NPM). It is the official package manager for Node.js</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>So what is their relation to node.js</h2>
+                    <p class="fragment roll-in">To put it simply, gulp.js is built on top of node.js</p>
+                </section>
+                <section>
+                    <h2>What does this mean?</h2>
+                    <ul>
                         <li class="fragment roll-in">gulp.js can use Node.js native modules</li>
-                        <li class="fragment roll-in">gulp.js specific packages is retrieved via NPM</li>
+                        <li class="fragment roll-in">gulp.js-specific packages is retrieved via NPM</li>
                     </ul>
                 </section>
                 <section>
-                    <p>And now back to our programming...</p>
+                    <img src="./assets/images/back_to_our_regular_scheduled_programming.jpg" alt="And now, back to our regular scheduled programming">
+                </section>
+            </div>
+            <div class="slides">
+                <section>
+                    <h2>So what is gulp.js?</h2>
+                </section>
+                <section>
+                    <h2>Task / Build Runner</h2>
+                </section>                    
+                <section>
+                    <h2>Uses native Javascript syntax</h2>
+                    <code>
+                        var gulp = require('gulp');
+
+                        gulp.task('default', function() {
+                          // place code for your default task here
+                        });
+                    </code>
+                </section>
+                <section>
+                    <h2>Uses pipes or streaming build</h2>
+                    <img src="./assets/images/piping.png" alt="Piping">
+                    <p>as opposed to</p>
+                    <img src="./assets/images/piping.png" alt="Piping">
                 </section>
             </div>
 
             <div class="slides">
                 <section>
-                    <p>I have deferred this long enough</p>
+                    <h2>Let's setup our</h2>
                 </section>
                 <section>
-                    <h3>What is gulp.js?</h3>
-                    <ul>
-                        <li class="fragment roll-in">Task / Build runner</li>
-                        <li class="fragment roll-in">Uses native Javascript Syntax</li>
-                        <li class="fragment roll-in">Uses Pipes or Streaming Build</li>
-                    </ul>
-                </section>
-                <section></section>
-            </div>
-
-            <div class="slides">
-                <!-- TODO: gulp.js installation -->
-                <section>
-                    <h3>Step 1: Install node.js and npm</h3>
+                    <h2>Step 1: Install node.js and npm</h2>
                     <ul>
                         <li class="fragment roll-in">
                             <p>Check if node.js is installed by running this code</p>
@@ -205,14 +211,14 @@
                                 </li>
                                 <li>
                                     <p>If the code above outputs something different, then try installing using this command</p>
-                                    <code>sudo apt-get install nodejs</code>
+                                    <code>sudo apt-get install Node.js</code>
                                 </li>
                             </ul>
                         </li>
                     </ul>
                 </section>
                 <section>
-                    <h3>Step 2: Install gulp.js</h3>
+                    <h2>Step 2: Install gulp.js</h2>
                     <ul>
                         <li class="fragment roll-in">
                             <p>Run this command</p>
@@ -230,7 +236,7 @@
                     </ul>
                 </section>
                 <section>
-                    <h3>Step 3: Setup your project</h3>
+                    <h2>Step 3: Setup your project</h2>
                     <ul>
                         <li class="fragment roll-in">
                             Check out barebones git project in 
@@ -246,14 +252,12 @@
                     </ul>
                 </section>
                 <section>
-                    <h3>Step 4: Download any plugin that we need</h3>
+                    <h2>Step 4: Download any plugin that we need</h2>
                     <p>For now, let us just skip this since this is a case-to-case basis.</p>
                 </section>
             </div>
 
             <div class="slides">
-                <!-- TODO: Barebones example showcasing the gulp.js api commands and how to run it
-                in the commandline -->
                 <!-- TODO: 4 gulp.js api commands -->
                 <section>
                     <p class="fragment roll-in">Not that's done, let us get into a very simple, barebones, do-nothing example</p>
@@ -272,7 +276,7 @@
                     <code>
                         var gulp = require('gulp'),
                             minifyHtml = require('gulp-minify-html'),
-                             rename = require('gulp-rename');
+                            rename = require('gulp-rename');
                          
                         gulp.task('minify-html', function () {
                             gulp.src('./index.html')
@@ -293,31 +297,154 @@
                         <li class="fragment roll-in">Watch the file system for changes with gulp.watch()</li>
                     </ul>
                 </section>
+                <section>
+                    <section>
+                        <h2>gulp.task()</h2>
+                        <p>To define a task, use the gulp.task() function. When you define a simple task, this function takes two attributes: the task’s name and a function to run.</p>
+                        <code>
+                            gulp.task('minify-html', function () {
+                                gulp.src('./index.html')
+                                    .pipe(minifyHtml())
+                                    .pipe(rename('index.min.html'))
+                                    .pipe(gulp.dest('./'));
+                            });
+                        </code>
+                    </section>
+                    <section>
+                        <h2>gulp.task()</h2>
+                        <p>A task may also be a list of other tasks. Suppose we want to define a build task that runs three other tasks, css, js and imgs. We can do this by specifying an array of tasks, instead of the function:</p>
+                        <code>
+                            gulp.task('build', ['css', 'js', 'imgs']);
+                        </code>
+                        <p>Important: This are run asynchronously/concurrently</p>
+                    </section>
+                    <section>
+                        <h2>gulp.task()</h2>
+                        <p>To make sure that a task has finished running before another task runs, you can specify dependencies by combining the array of tasks with the function. For example, to define a css task that checks that the greet task has finished running before it runs, you can do this:</p>
+                        <code>
+                            gulp.task('css', ['greet'], function () {
+                                // Deal with CSS here
+                            });
+                        </code>
+                    </section>
+                    <section>
+                        <h2>gulp.task()</h2>
+                        <p>If you don't specify a task to run in the commandline gulp call, it will try to find a task named <q>default</q> and execute that</p>
+                        <code>
+                            gulp.task('default', function () {
+                                // Your default task
+                            });
+                        </code>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>gulp.src()</h2>
+                        <p>The <q>gulp.src()</q> function takes a glob (i.e. a string matching one or more files) or an array of globs and returns a stream that can be piped to plugins.</p>
+                        <code>
+                            gulp.src('js/app.js')
+                                .pipe(uglify())
+                                ...
+                        </code>
+                    </section>
+                    <section>
+                        <h2>gulp.src()</h2>
+                        <p>Gulp uses node-glob to get the files from the glob or globs you specify.</p>
+                        <ul>
+                            <li>
+                                <div><q>js/app.js</q></div>
+                                <p>Matches the exact file</p>
+                            </li>
+                             <li>
+                                <div><q>js/*.js</q></div>
+                                <p>Matches all files ending in .js in the js directory only</p>
+                            </li>
+                            <li>
+                                <div><q>js/**/*.js</q></div>
+                                <p>Matches all files ending in .js in the js directory and all child directories</p>
+                            </li>
+                            <li>
+                                <div><q>!js/app.js</q></div>
+                                <p>Excludes js/app.js from the match, which is useful if you want to match all files in a directory except for a particular file</p>
+                            </li>
+                            <li>
+                                <div><q>!js/app.js</q></div>
+                                <p>Matches all files in the root directory ending in .js or .css</p>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>gulp.src()</h2>
+                        <p>You can combine multiple glob rules for more specific filters</p>
+                        <code>
+                            gulp.src(['js/**/*.js', '!js/**/*.min.js'])
+                                ...
+                        </code>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>gulp.dest()</h2>
+                        <p>Outputs the files in the pipe/stream</p>
+                        <code>
+                            gulp.src('./index.html')
+                                ...
+                                .pipe(gulp.dest('./'));
+                        </code>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>gulp.watch()</h2>
+                        <p>Watch the file system for changes and executes</p>
+                        <code>
+                           gulp.watch('js/**/*.js', ['uglify','reload']);
+                        </code>
+                    </section>
+                </section>
             </div>          
 
             <div class="slides">
-                <!-- Basic examples -->
-                <!-- TODO: CSS Minification -->
-                <!-- TODO: Javascript Minification -->
-                <!-- TODO: Image Optimization -->
+                <section>
+                    <section>
+                        <h2>Basic Exercises</h2>
+                        <ul>
+                            <li class="fragment roll-in">
+                                <a href="https://www.npmjs.org/package/gulp-minify-css" target="_blank">CSS Minification using <strong>gulp-minify-css</strong></a>
+                            </li>
+                            <li class="fragment roll-in">
+                                <a href="https://www.npmjs.org/package/gulp-imagemin" target="_blank">Image Optimization using <strong>gulp-imagemin</strong></a></li>
+                            <li class="fragment roll-in">
+                                <a href="https://www.npmjs.org/package/gulp-uglify" target="_blank">Javascript Minification using <strong>gulp-uglify</strong></a>
+                            </li>
+                            <li class="fragment roll-in">
+                                <a href="https://github.com/gulpjs/gulp-util" target="_blank">Handling errors using <strong>gulp-util</strong></a>
+                            </li>
+                        </ul>
+                </section>
+                
             </div>
 
             <div class="slides">
-                <!-- More examples -->
-                <!-- TODO: JSHint -->
-                <!-- TODO: Combination of the basic examples -->
-                <!-- TODO: LESS compilation -->
-                <!-- TODO: using watch -->
-                <!-- TODO: Handling errors -->
-            </div>
-
-            <div class="slides">
-                <!-- Advanced examples -->
-                <!-- TODO: Browserify -->
-                <!-- TODO: Browsersync -->
+                <section>
+                    <h2>Advanced exercises</h2>
+                    <ul>
+                        <li class="fragment roll-in">
+                            <a href="https://www.npmjs.org/package/gulp-jshint" target="_blank">JSHint using <strong>gulp-jshint</strong></a>
+                        </li>
+                        <li class="fragment roll-in">
+                            <a href="https://www.npmjs.org/package/gulp-less" target="_blank">LESS compilation using <strong>gulp-less</strong></a>
+                        </li>
+                        <li class="fragment roll-in">
+                            <a href="http://www.browsersync.io/docs/gulp/" target="_blank">Synchronized browser testing with <strong>browser-sync</strong></a>
+                        </li>
+                        <li class="fragment roll-in">
+                            <a href="https://www.npmjs.org/package/gulp-browserify" target="_blank">Bundle modules with <strong>browserify</strong></a>
+                        </li>
+                    </ul>
+                </section>
             </div>
         <script src="./bower_components/reveal.js/js/reveal.min.js"></script>
-        <script src="./bower_components/reveal.js/plugin/highlight/highlight.js"></script>
         <script type="text/javascript">
             Reveal.initialize({ 
                 autoSlide: 0
