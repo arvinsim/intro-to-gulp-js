@@ -4,6 +4,7 @@
         <title>Introduction to gulp.js</title>
         <link rel="stylesheet" href="./bower_components/reveal.js/css/reveal.min.css">
         <link rel="stylesheet" href="./bower_components/reveal.js/css/theme/night.css">
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js"></script>
     </head>
     <body>
         <div class="reveal">
@@ -17,9 +18,7 @@
                     <h2>The obligatory introduction speech</h2>
                     <ul>
                         <li class="fragment roll-in">Name: Arthur Vincent Simon</li>
-                        <li class="fragment roll-in">Age: Irrelevant!</li>
                         <li class="fragment roll-in">Occupation: Web Developer at Innovuze Inc.</li>
-                        <li class="fragment roll-in">Years in the field: 6</li>
                     </ul>
                 </section>
                 <section>
@@ -76,6 +75,7 @@
                         <li class="fragment roll-in">Multiple build setups like separate builds for
                         development and production</li>
                         <li class="fragment roll-in">Building gulp plugins</li>
+                        <li class="fragment roll-in">Gulp vs Grunt flame wars</li>
                     </ul>
                 </section>
                 <section>
@@ -176,13 +176,15 @@
                 </section>                    
                 <section>
                     <h2>Uses native Javascript syntax</h2>
-                    <code>
+                    <pre>
+                        <code>
                         var gulp = require('gulp');
 
                         gulp.task('default', function() {
                           // place code for your default task here
                         });
-                    </code>
+                        </code>
+                    </pre>
                 </section>
                 <section>
                     <h2>Uses pipes or streaming build</h2>
@@ -201,19 +203,25 @@
                     <ul>
                         <li class="fragment roll-in">
                             <p>Check if node.js is installed by running this code</p>
-                            <code>node -v</code>
+                            <pre>
+                                <code>node -v</code>
+                            </pre>
                             <p>(The -v flag is to show the version of node.js)</p>
                         </li>
                         <li class="fragment roll-in">
                             <ul>
                                 <li>
                                     <p>If the code above outputs something like..</p>
-                                    <code>v0.10.26</code>
+                                    <pre>
+                                        <code>v0.10.26</code>
+                                    </pre>
                                     <p>...then node.js is already installed</p>
                                 </li>
                                 <li>
                                     <p>If the code above outputs something different, then try installing using this command</p>
-                                    <code>sudo apt-get install Node.js</code>
+                                    <pre>
+                                        <code>sudo apt-get install node.js</code>
+                                    </pre>
                                 </li>
                             </ul>
                         </li>
@@ -224,16 +232,22 @@
                     <ul>
                         <li class="fragment roll-in">
                             <p>Run this command</p>
-                            <code>npm install gulp -g</code>
+                            <pre>
+                                <code>npm install gulp -g</code>
+                            </pre>
                             <p>Note: the -g flag is to ensure gulp is available globally to all projects</p>
                         </li>
                         <li class="fragment roll-in">
                             <p>If you are using Mac or Linux OS, you might need to prepend sudo</p>
-                            <code>sudo npm install gulp -g</code>
+                            <pre>
+                                <code>sudo npm install gulp -g</code>
+                            </pre>
                         </li>
                         <li class="fragment roll-in">
                             <p>Check if gulp was installed properly by checking the version via the -v flag</p>
-                            <code>gulp -v</code>
+                            <pre>
+                                <code>gulp -v</code>
+                            </pre>
                         </li>
                     </ul>
                 </section>
@@ -241,11 +255,10 @@
                     <h2>Step 3: Setup your project</h2>
                     <ul>
                         <li class="fragment roll-in">
-                            Check out barebones git project in 
-                        </li>
-                        <li class="fragment roll-in">
                             <p>Install Gulp locally</p>
+                            <pre>
                             <code>npm install gulp --save-dev</code>
+                            </pre>
                             <p>Note: This will create a node_modules folder within your current directory. This contains the code for gulp and gulp plugins</p>
                         </li>
                         <li class="fragment roll-in">
@@ -261,106 +274,122 @@
 
             <div class="slides">
                 <!-- 4 gulp.js api commands -->
-                <section  data-background="#1A4241">
+                <section data-background="#1A4241">
                     <h2>gulp.js API commands</h2>
                 </section>
-                <section data-background="#400000">
+                <section>
+                    <h2>Basic example</h2>
                     <p class="fragment roll-in">Not that's done, let us get into a very simple, barebones, do-nothing example</p>
-                    <code class="fragment roll-in">
-                        var gulp = require('gulp');
+                    <pre class="fragment roll-in">
+                        <code>
+                            var gulp = require('gulp');
 
-                        gulp.task('default', function() {
-                          // place code for your default task here
-                        });
-                    </code>
+                            gulp.task('default', function() {
+                              // place code for your default task here
+                            });
+                        </code>
+                    </pre>
                 </section>
                 <section>Let's try something a little bit more useful</section>
                 <section>
-                    <code>
-                        var gulp = require('gulp'),
-                            minifyHtml = require('gulp-minify-html'),
-                            minifyCss = require('gulp-minify-css'),
-                            uglify = require('gulp-uglify'),
-                            rename = require('gulp-rename');
-                         
-                        gulp.task('minify-html', function() {
-                            gulp.src('./index.html')
-                                .pipe(minifyHtml())
-                                .pipe(rename('index.min.html'))
-                                .pipe(gulp.dest('./'));
-                        });
-
-                        gulp.task('minify-css', function() {
-                            gulp.src('./css/src/*.css')
-                                .pipe(minifyCss())
-                                .pipe(gulp.dest('./css/min/'));
-                        });
-
-                        gulp.task('minify-javascript', function() {
-                            gulp.src('js/app.js')
-                                .pipe(uglify())
-                                .pipe(gulp.dest('./js/min/'));
-                        });
-
-                        gulp.task('default', ['minify-html', 'minify-css', 'minify-javascript']);
-                    </code>
-                </section>
-                <section>
-                    <p>4 api commands that we are using for gulp.js</p>
-                    <ul>
-                        <li class="fragment roll-in">Define tasks with gulp.task()</li>
-                        <li class="fragment roll-in">Open files/directories with gulp.src()</li>
-                        <li class="fragment roll-in">Output files/directories with gulp.dest()</li>
-                        <li class="fragment roll-in">Watch the file system for changes with gulp.watch()</li>
-                    </ul>
-                </section>
-                <section>
-                    <section>
-                        <h2>gulp.task()</h2>
-                        <p>To define a task, use the gulp.task() function. When you define a simple task, this function takes two attributes: the task’s name and a function to run.</p>
+                    <h2>"Useful" example</h2>
+                    <pre>
                         <code>
-                            gulp.task('minify-html', function () {
+                            var gulp = require('gulp'),
+                                minifyHtml = require('gulp-minify-html'),
+                                minifyCss = require('gulp-minify-css'),
+                                uglify = require('gulp-uglify'),
+                                rename = require('gulp-rename');
+                             
+                            gulp.task('minify-html', function() {
                                 gulp.src('./index.html')
                                     .pipe(minifyHtml())
                                     .pipe(rename('index.min.html'))
                                     .pipe(gulp.dest('./'));
                             });
+
+                            gulp.task('minify-css', function() {
+                                gulp.src('./css/src/*.css')
+                                    .pipe(minifyCss())
+                                    .pipe(gulp.dest('./css/min/'));
+                            });
+
+                            gulp.task('minify-javascript', function() {
+                                gulp.src('js/app.js')
+                                    .pipe(uglify())
+                                    .pipe(gulp.dest('./js/min/'));
+                            });
+
+                            gulp.task('default', ['minify-html', 'minify-css', 'minify-javascript']);
                         </code>
+                    </pre>
+                </section>
+                <section data-background="#1A4241">
+                    <h2>4 gulp.js api commands</h2>
+                    <ul>
+                        <li class="fragment roll-in">Define tasks with <strong>gulp.task()</strong></li>
+                        <li class="fragment roll-in">Open files/directories with <strong>gulp.src()</strong></li>
+                        <li class="fragment roll-in">Output files/directories with <strong>gulp.dest()</strong></li>
+                        <li class="fragment roll-in">Watch the file system for changes with <strong>gulp.watch()</strong></li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <h2>gulp.task()</h2>
+                        <p>To define a task, use the gulp.task() function. When you define a simple task, this function takes two attributes: the task's name and a function to run.</p>
+                        <pre>
+                            <code>
+                                gulp.task('minify-html', function () {
+                                    gulp.src('./index.html')
+                                        .pipe(minifyHtml())
+                                        .pipe(rename('index.min.html'))
+                                        .pipe(gulp.dest('./'));
+                                });
+                            </code>
+                        </pre>
                     </section>
                     <section>
                         <h2>gulp.task()</h2>
                         <p>A task may also be a list of other tasks. Suppose we want to define a build task that runs three other tasks, css, js and imgs. We can do this by specifying an array of tasks, instead of the function:</p>
-                        <code>
-                            gulp.task('default', ['minify-html', 'minify-css', 'minify-javascript']);
-                        </code>
+                        <pre>
+                            <code>
+                                gulp.task('default', ['minify-html', 'minify-css', 'minify-javascript']);
+                            </code>
+                        </pre>
                         <p>Important: This are run asynchronously/concurrently</p>
                     </section>
                     <section>
                         <h2>gulp.task()</h2>
                         <p>To make sure that a task has finished running before another task runs, you can specify dependencies by combining the array of tasks with the function. For example, to define a css task that checks that the greet task has finished running before it runs, you can do this:</p>
-                        <code>
-                            gulp.task('minify-css', ['minify-css', 'minify-javascript'], function () {
-                                // Deal with CSS here
-                            });
-                        </code>
+                        <pre>
+                            <code>
+                                gulp.task('minify-css', ['minify-css', 'minify-javascript'], function () {
+                                    // Deal with CSS here
+                                });
+                            </code>
+                        </pre>
                     </section>
                     <section>
                         <h2>gulp.task()</h2>
                         <p>If you don't specify a task to run in the commandline gulp call, it will try to find a task named <q>default</q> and execute that</p>
-                        <code>
-                            gulp.task('default', ['minify-html', 'minify-css', 'minify-javascript']);
-                        </code>
+                        <pre>
+                            <code>
+                                gulp.task('default', ['minify-html', 'minify-css', 'minify-javascript']);
+                            </code>
+                        </pre>
                     </section>
                 </section>
                 <section>
                     <section>
                         <h2>gulp.src()</h2>
                         <p>The <q>gulp.src()</q> function takes a glob (i.e. a string matching one or more files) or an array of globs and returns a stream that can be piped to plugins.</p>
-                        <code>
-                            gulp.src('js/app.js')
-                                .pipe(uglify())
-                                ...
-                        </code>
+                        <pre>
+                            <code>
+                                gulp.src('js/app.js')
+                                    .pipe(uglify())
+                                    ...
+                            </code>
+                        </pre>
                     </section>
                     <section>
                         <h2>gulp.src()</h2>
@@ -391,30 +420,36 @@
                     <section>
                         <h2>gulp.src()</h2>
                         <p>You can combine multiple glob rules for more specific filters</p>
-                        <code>
-                            gulp.src(['js/**/*.js', '!js/**/*.min.js'])
-                                ...
-                        </code>
+                        <pre>
+                            <code>
+                                gulp.src(['js/**/*.js', '!js/**/*.min.js'])
+                                    ...
+                            </code>
+                        </pre>
                     </section>
                 </section>
                 <section>
                     <section>
                         <h2>gulp.dest()</h2>
                         <p>Outputs the files in the pipe/stream</p>
-                        <code>
-                            gulp.src('./index.html')
-                                ...
-                                .pipe(gulp.dest('./'));
-                        </code>
+                        <pre>
+                            <code>
+                                gulp.src('./index.html')
+                                    ...
+                                    .pipe(gulp.dest('./'));
+                            </code>
+                        </pre>
                     </section>
                 </section>
                 <section>
                     <section>
                         <h2>gulp.watch()</h2>
                         <p>Watch the file system for changes and executes</p>
-                        <code>
-                           gulp.watch('js/**/*.js', ['uglify','reload']);
-                        </code>
+                        <pre>
+                            <code>
+                               gulp.watch('js/**/*.js', ['uglify','reload']);
+                            </code>
+                        </pre>
                     </section>
                 </section>
             </div>          
@@ -460,8 +495,8 @@
             </div>
 
             <div class="slides">
-                <section data-background="#400000">
-                    <h2>Thanks</h2>
+                <section>
+                    <img src="./assets/images/thanks.gif" alt="Thanks">
                 </section>
             </div>
         <script src="./bower_components/reveal.js/js/reveal.min.js"></script>
