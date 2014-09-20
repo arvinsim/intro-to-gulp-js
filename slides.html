@@ -48,10 +48,10 @@
                         </li>
                     </ul>
                 </section>
-                <section data-background="#1A4241">
+                <section>
                     <img src="./assets/images/still_interested.jpg" alt="Still Interested">
                 </section>
-                <section data-background="#1A4241">
+                <section>
                     <h2>Summary continued</h2>
                     <ul>
                         <li class="fragment roll-in">
@@ -69,7 +69,7 @@
                         </li>
                     </ul>
                 </section>
-                <section data-background="#1A4241">
+                <section>
                     <h2>What I won't cover</h2>
                     <ul>
                         <li class="fragment roll-in">The nitty gritty of node.js streams</li>
@@ -78,35 +78,35 @@
                         <li class="fragment roll-in">Building gulp plugins</li>
                     </ul>
                 </section>
-                <section data-background="#1A4241">
+                <section>
                     <img src="./assets/images/savvy.jpg" alt="savvy?">
                 </section>
             </div>              
 
             <!-- Build Systems -->
             <div class="slides">
-                <section>
-                    <h2>So what are build systems/build automation?</h2>
+                <section data-background="#1A4241">
+                    <h2>Build systems/Build automation</h2>
                 </section>
                 <section>
                     <h2>Definition</h2>
                     <blockquote class="fragment roll-in">
                         <p>Build automation is the act of scripting or automating a wide variety of tasks that software developers do in their day-to-day activities including things like:</p>
                         <ul>
-                            <li class="fragment roll-in">compiling computer source code into binary code</li>
-                            <li class="fragment roll-in">packaging binary code</li>
-                            <li class="fragment roll-in">running automated tests</li>
-                            <li class="fragment roll-in">deploying to production systems</li>
-                            <li class="fragment roll-in">creating documentation and/or release notes</li>
+                            <li class="fragment roll-in">Compiling computer source code into binary code</li>
+                            <li class="fragment roll-in">Packaging binary code</li>
+                            <li class="fragment roll-in">Running automated tests</li>
+                            <li class="fragment roll-in">Deploying to production systems</li>
+                            <li class="fragment roll-in">Creating documentation and/or release notes</li>
                         </ul>
                     </blockquote>
                 </section>
                 <section>
                     <h2>What this means for a web developer</h2>
                     <ul>
-                        <li class="fragment roll-in">Running tests</li>
+                        <li class="fragment roll-in">Running Unit tests</li>
                         <li class="fragment roll-in">Linting and minification of JS files</li>
-                        <li class="fragment roll-in">Compiling LESS, SASS and/or Coffeescript Files</li>
+                        <li class="fragment roll-in">Compiling/Preprocessing LESS, SASS and/or Coffeescript Files</li>
                         <li class="fragment roll-in">Asset Optimization</li>
                         <li class="fragment roll-in">Deployment to Production Servers</li>
                     </ul>
@@ -115,16 +115,16 @@
                     <h2>A few examples</h2>
                     <ul>
                         <li class="fragment roll-in">GNU make</li>
-                        <li class="fragment roll-in">Rake(Ruby)</li>
-                        <li class="fragment roll-in">Maven(Java)</li>
-                        <li class="fragment roll-in">Ant(Java)</li>
-                        <li class="fragment roll-in">Scons(Python)</li>
-                        <li class="fragment roll-in">A-A-P(Python)</li>
-                        <li class="fragment roll-in">Grunt(Javascript)</li>
+                        <li class="fragment roll-in">Rake (Ruby)</li>
+                        <li class="fragment roll-in">Maven (Java)</li>
+                        <li class="fragment roll-in">Ant (Java)</li>
+                        <li class="fragment roll-in">Scons (Python)</li>
+                        <li class="fragment roll-in">A-A-P (Python)</li>
+                        <li class="fragment roll-in">Grunt (Javascript)</li>
                     </ul>
                 </section>
                 <section>
-                    <h2>Why are they relevant? How can they help me?</h2>
+                    <h2>How can they help me?</h2>
                     <ul>
                         <li class="fragment roll-in">Improve product quality</li>
                         <li class="fragment roll-in">Eliminate redundant tasks</li>
@@ -140,13 +140,14 @@
                 <section>
                     <img src="./assets/images/detour.jpg" alt="Let us sidetrack a bit">
                 </section>
-                <section>
-                    <img src="./assets/images/Node.js.png" alt="Node.js" style="border: none; background: none; box-shadow: none;">
+                <section data-background="#1A4241">
+                    <h2>NodeJS and NPM</h2>
+                    <img src="./assets/images/nodejs.png" alt="Node.js" style="border: none; background: none; box-shadow: none;">
                 </section>
                 <section>
-                    <h2>Definitions</h2>
+                    <h2>Definition</h2>
                     <ul>
-                        <li><stron>Node.js</strong> - Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications</li>
+                        <li><strong>Node.js</strong> - Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications</li>
                         <li><strong>NPM</strong> - Stands for Node Packaged Modules(NPM). It is the official package manager for Node.js</li>
                     </ul>
                 </section>
@@ -165,12 +166,13 @@
                     <img src="./assets/images/back_to_our_regular_scheduled_programming.jpg" alt="And now, back to our regular scheduled programming">
                 </section>
             </div>
+
             <div class="slides">
-                <section>
+                <section data-background="#1A4241">
                     <h2>So what is gulp.js?</h2>
                 </section>
                 <section>
-                    <h2>Task / Build Runner</h2>
+                    <h2>Task / Build Runner / Build System</h2>
                 </section>                    
                 <section>
                     <h2>Uses native Javascript syntax</h2>
@@ -185,14 +187,14 @@
                 <section>
                     <h2>Uses pipes or streaming build</h2>
                     <img src="./assets/images/piping.png" alt="Piping">
-                    <p>as opposed to</p>
-                    <img src="./assets/images/piping.png" alt="Piping">
                 </section>
             </div>
 
             <div class="slides">
-                <section>
-                    <h2>Let's setup our</h2>
+                <!-- gulp.js installation -->
+                <section data-background="#1A4241">
+                    <h2>Gulp Installation</h2>
+                    <img src="./assets/images/install_wizard.jpg" alt="Gulp Installation">
                 </section>
                 <section>
                     <h2>Step 1: Install node.js and npm</h2>
@@ -258,8 +260,11 @@
             </div>
 
             <div class="slides">
-                <!-- TODO: 4 gulp.js api commands -->
-                <section>
+                <!-- 4 gulp.js api commands -->
+                <section  data-background="#1A4241">
+                    <h2>gulp.js API commands</h2>
+                </section>
+                <section data-background="#400000">
                     <p class="fragment roll-in">Not that's done, let us get into a very simple, barebones, do-nothing example</p>
                     <code class="fragment roll-in">
                         var gulp = require('gulp');
@@ -268,25 +273,37 @@
                           // place code for your default task here
                         });
                     </code>
-                    <p>In your terminal run this</p>
-                    <code>gulp</code>
                 </section>
                 <section>Let's try something a little bit more useful</section>
                 <section>
                     <code>
                         var gulp = require('gulp'),
                             minifyHtml = require('gulp-minify-html'),
+                            minifyCss = require('gulp-minify-css'),
+                            uglify = require('gulp-uglify'),
                             rename = require('gulp-rename');
                          
-                        gulp.task('minify-html', function () {
+                        gulp.task('minify-html', function() {
                             gulp.src('./index.html')
                                 .pipe(minifyHtml())
                                 .pipe(rename('index.min.html'))
                                 .pipe(gulp.dest('./'));
                         });
+
+                        gulp.task('minify-css', function() {
+                            gulp.src('./css/src/*.css')
+                                .pipe(minifyCss())
+                                .pipe(gulp.dest('./css/min/'));
+                        });
+
+                        gulp.task('minify-javascript', function() {
+                            gulp.src('js/app.js')
+                                .pipe(uglify())
+                                .pipe(gulp.dest('./js/min/'));
+                        });
+
+                        gulp.task('default', ['minify-html', 'minify-css', 'minify-javascript']);
                     </code>
-                    <p>In your terminal run this</p>
-                    <code>gulp minify-html</code>
                 </section>
                 <section>
                     <p>4 api commands that we are using for gulp.js</p>
@@ -314,7 +331,7 @@
                         <h2>gulp.task()</h2>
                         <p>A task may also be a list of other tasks. Suppose we want to define a build task that runs three other tasks, css, js and imgs. We can do this by specifying an array of tasks, instead of the function:</p>
                         <code>
-                            gulp.task('build', ['css', 'js', 'imgs']);
+                            gulp.task('default', ['minify-html', 'minify-css', 'minify-javascript']);
                         </code>
                         <p>Important: This are run asynchronously/concurrently</p>
                     </section>
@@ -322,7 +339,7 @@
                         <h2>gulp.task()</h2>
                         <p>To make sure that a task has finished running before another task runs, you can specify dependencies by combining the array of tasks with the function. For example, to define a css task that checks that the greet task has finished running before it runs, you can do this:</p>
                         <code>
-                            gulp.task('css', ['greet'], function () {
+                            gulp.task('minify-css', ['minify-css', 'minify-javascript'], function () {
                                 // Deal with CSS here
                             });
                         </code>
@@ -331,9 +348,7 @@
                         <h2>gulp.task()</h2>
                         <p>If you don't specify a task to run in the commandline gulp call, it will try to find a task named <q>default</q> and execute that</p>
                         <code>
-                            gulp.task('default', function () {
-                                // Your default task
-                            });
+                            gulp.task('default', ['minify-html', 'minify-css', 'minify-javascript']);
                         </code>
                     </section>
                 </section>
@@ -406,7 +421,7 @@
 
             <div class="slides">
                 <section>
-                    <section>
+                    <section data-background="#400000">
                         <h2>Basic Exercises</h2>
                         <ul>
                             <li class="fragment roll-in">
@@ -422,11 +437,10 @@
                             </li>
                         </ul>
                 </section>
-                
             </div>
 
             <div class="slides">
-                <section>
+                <section data-background="#400000">
                     <h2>Advanced exercises</h2>
                     <ul>
                         <li class="fragment roll-in">
@@ -444,21 +458,26 @@
                     </ul>
                 </section>
             </div>
+
+            <div class="slides">
+                <section data-background="#400000">
+                    <h2>Thanks</h2>
+                </section>
+            </div>
         <script src="./bower_components/reveal.js/js/reveal.min.js"></script>
         <script type="text/javascript">
             Reveal.initialize({ 
-                autoSlide: 0
-                // ,
-                // dependencies: [
-                //     // Syntax highlight for <code> elements
-                //     { 
-                //         src: './bower_components/reveal.js/plugin/highlight/highlight.js',
-                //         async: true,
-                //         callback: function() {
-                //             hljs.initHighlightingOnLoad();
-                //         }
-                //     }
-                // ]
+                autoSlide: 0,
+                dependencies: [
+                    // Syntax highlight for <code> elements
+                    { 
+                        src: './bower_components/reveal.js/plugin/highlight/highlight.js',
+                        async: true,
+                        callback: function() {
+                            hljs.initHighlightingOnLoad();
+                        }
+                    }
+                ]
             });
         </script>
     </body>
